@@ -1,0 +1,68 @@
+style.css
+
+ 
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    align-items: center;
+    background-color: lavender;
+}
+
+
+form label {
+    font-weight:bold;
+    font-size: 18pt;
+}
+ 
+
+#q {
+    width: 500px;
+    height: 30px;
+    font-size: 16pt;
+}
+
+
+.align-right input {
+    margin-top: 15px;
+}
+
+
+.align-right label {
+    width: 100%;
+    padding: 12px;
+    font-style: bold;  
+}
+
+
+.button {
+    background-color: #03387e;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 9px 2px;
+    border-radius: 10px;
+    width: 100px;
+    cursor: pointer;  
+}
+
+ 
+
+.button:focus {
+    background-color: #03387e;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 9px 2px;
+    border-radius: 10px;
+    width: 100px;
+    cursor: pointer;  
+}

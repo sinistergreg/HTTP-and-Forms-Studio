@@ -1,19 +1,107 @@
 <!doctype html>
 
+ 
+
 <head>
-	<meta charset="utf-8">
-	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
+
+    <title>Search The Web</title>
+
+    <meta charset="utf-8">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <script>
+
+        // TODO: create a handler
+
+    window.addEventListener("load", function() {        
+
+        function setSearchEngine(searchEngine) { 
+
+            let actions = {
+
+                 "google": "https://www.google.com/search",
+
+                "duckDuckGo": "https://duckduckgo.com/",
+
+                "bing": "https://www.bing.com/search",
+
+                "ask": "https://www.ask.com/web" 
+
+            };
+
+ 
+
+            for (key in actions) {
+ 
+
+                if (searchEngine === key) { 
+
+                    form.setAttribute('action', actions[key]);
+                } 
+            } 
+
+        }
+
+        let searchInput = document.getElementById('q');
+        let engines = document.querySelectorAll('[name="engine"]');
+        let form = document.getElementById("searchForm");
+
+         form.addEventListener("submit", function (e) { 
+
+            if (engines[0].checked === false && engines[1].checked === false && engines[2].checked === false && engines[3].checked === false) {
+
+                 alert("Please Select a Search Engine");
+
+                e.preventDefault(); 
+
+            } else if (searchInput.value === "") { 
+
+                alert("Please Enter Something to Search");
+
+                e.preventDefault(); 
+
+            }
+
+
+            let selectedSearchEngine = document.querySelector('input[name=engine]:checked'); 
+
+            setSearchEngine(selectedSearchEngine.value); 
+
+        }); 
+
     });
-	</script>
-</head>
+
+    </script>
+
+</head> 
 
 <body>
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
-	</form>
+    <form id="searchForm">
+
+        <label for="q" >Search:</label>
+        <input type="text" name="q" id="q"/>
+        <br><br>
+
+        <input type="radio" name="engine" value="google"/>
+        <label for="google">Google</label>
+        <br><br>
+
+        <input type="radio" name="engine" value="duckDuckGo"/>
+        <label for="duckDuckGo">DuckDuckGo</label>
+        <br><br>
+
+        <input type="radio" name="engine" value="bing"/>
+        <label for="bing">Bing</label>
+        <br><br>
+
+        <input type="radio" name="engine" value="ask"/>
+        <label for="ask">Ask</label>
+        <br><br>
+
+        <button class="button" value="Go!">Go!</button>
+
+    </form>
 
 </body>
